@@ -1,8 +1,10 @@
+import os
+
 class Config:
 
     SECRET_KEY = "secret123"
 
     SQLALCHEMY_DATABASE_URI = \
-        "postgresql://postgres:root@localhost/taskdb"
+        os.environ.get("DATABASE_URL")
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
